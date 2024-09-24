@@ -2,15 +2,11 @@
 /* eslint-disable react/jsx-key */
 "use client"
 import Link from "next/link";
-import SwiperCore from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/autoplay';
+import 'swiper/css/bundle';
 
-SwiperCore.use([Autoplay, Navigation]);
 const BlogSlider = () => {
 
     const data = [
@@ -34,6 +30,7 @@ const BlogSlider = () => {
             <div className="slider-news">
                 <div className="swiper-container swiper-group-1">
                     <Swiper
+                        modules={[Navigation, Pagination, Scrollbar, A11y]}
                         slidesPerView={1}
                         spaceBetween={30}
                         loop={true}
